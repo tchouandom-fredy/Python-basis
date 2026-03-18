@@ -47,9 +47,17 @@ func(24, c=25)
 func(c = 50 , a = 100 )
 	
 # varargs for variable number of parameters 
-def( initial=5, *number, **keywords):
-	
+def total( initial=5, *numbers, **keywords):
+    count = initial
+    for number in numbers:
+        count += number
+    for key in keywords:
+        count += keywords[key]
+    return count
 
+print(total(10, 1, 2, 3, vegetables=50, fruits=100))
+
+ 
 
 
 
